@@ -14,4 +14,6 @@
     <property name="datetimeType" value="datetime(6)" dbms="mysql, mariadb"/>
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
+    <include file="liquibase/changelog/v0/2606012303_create_ingredient_table.xml" relativeToChangelogFile="false"/>
+
 </databaseChangeLog>

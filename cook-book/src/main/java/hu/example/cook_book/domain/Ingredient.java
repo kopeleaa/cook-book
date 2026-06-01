@@ -32,10 +32,12 @@ public class Ingredient extends AbstractEntity{
     @Column(name = "TYPE", nullable = false, length = 256)
     private IngredientType type;
 
-    @Column(name = "QUANTITY")
+    @Column(name = "QUANTITY", nullable = false)
     private Double quantity;
 
-    @Column(name = "UNIT", length = 256)
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    @Column(name = "UNIT", length = 256, nullable = false)
     private IngredientUnit unit;
 
     @Future
@@ -47,7 +49,7 @@ public class Ingredient extends AbstractEntity{
     @Column(name = "TASTE_PROFILE", nullable = false, length = 256)
     private TasteProfile tasteProfile;
 
-    @Column(name = "IN_STOCK")
+    @Column(name = "IN_STOCK", nullable = false)
     private boolean inStock;
 
 

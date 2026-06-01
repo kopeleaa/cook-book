@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="2606012303_create_ingredient_table" author="ekopilovic">
+        <createTable tableName="INGREDIENT">
+            <column name="NAME" type="varchar(256)" >
+                <constraints nullable="false" />
+            </column>
+            <column name="DESCRIPTION" type="varchar(1024)"/>
+            <column name="TYPE" type="varchar(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="QUANTITY" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UNIT" type="varchar(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPIRATION_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TASTE_PROFILE" type="varchar(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IN_STOCK" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
