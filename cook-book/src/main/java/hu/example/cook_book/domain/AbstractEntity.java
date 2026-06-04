@@ -3,10 +3,8 @@ package hu.example.cook_book.domain;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import lombok.Getter;
 
 
-@Getter
 @MappedSuperclass
 public class AbstractEntity {
 
@@ -14,5 +12,11 @@ public class AbstractEntity {
     @GeneratedValue
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(final Long id) {
+        this.id = id;
+    }
 }

@@ -8,16 +8,9 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 
 @Entity
 @Table(name = "INGREDIENT")
-@Getter
-@Setter
-@NoArgsConstructor
 public class Ingredient extends AbstractEntity{
 
     @NotNull
@@ -52,8 +45,69 @@ public class Ingredient extends AbstractEntity{
     @Column(name = "IN_STOCK", nullable = false)
     private boolean inStock;
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(final String name) {
+        this.name = name;
+    }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(final String description) {
+        this.description = description;
+    }
+
+    public IngredientType getType() {
+        return type;
+    }
+
+    public void setType(final IngredientType type) {
+        this.type = type;
+    }
+
+    public Double getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(final Double quantity) {
+        this.quantity = quantity;
+    }
+
+    public IngredientUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(final IngredientUnit unit) {
+        this.unit = unit;
+    }
+
+    public LocalDate getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(final LocalDate expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public TasteProfile getTasteProfile() {
+        return tasteProfile;
+    }
+
+    public void setTasteProfile(final TasteProfile tasteProfile) {
+        this.tasteProfile = tasteProfile;
+    }
+
+    public boolean isInStock() {
+        return inStock;
+    }
+
+    public void setInStock(final boolean inStock) {
+        this.inStock = inStock;
+    }
 }
 
 
