@@ -1,0 +1,11 @@
+openapi: '3.0.2'
+info:
+    title: 'Cook Book API'
+    version: 1.0
+servers:
+  - url: '/'
+    description: 'Default Server URL'
+
+paths:
+  /ingredients/ingredient:
+    $ref: 'ingredient.yaml#/methods/createIngredient'

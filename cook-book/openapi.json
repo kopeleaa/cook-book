@@ -1,0 +1,6 @@
+{
+  "typeMappings": {
+    "DateTime": "java.time.LocalDateTime",
+    "string+binary": "StreamingResponseBody"
+  }
+}

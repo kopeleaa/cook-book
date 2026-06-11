@@ -118,6 +118,43 @@
 					</execution>
 				</executions>
 			</plugin>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <configuration>
+                    <generatorName>spring</generatorName>
+                    <library>spring-boot</library>
+                    <configurationFile>${project.basedir}/openapi.json</configurationFile>
+<!--                    <ignoreFileOverride>${project.basedir}/.openapi-generator-ignore</ignoreFileOverride>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-cook-book-api</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/src/main/resources/swagger/cook_book_api.yaml</inputSpec>
+                            <generateApis>true</generateApis>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <apiPackage>hu.example.cook_book.web.api</apiPackage>
+                            <modelPackage>hu.example.cook_book.web.model</modelPackage>
+                            <configOptions>
+                                <dateLibrary>java8</dateLibrary>
+                                <interfaceOnly>true</interfaceOnly>
+                                <java8>true</java8>
+                                <useBeanValidation>true</useBeanValidation>
+                                <serializableModel>true</serializableModel>
+                                <useSpringBoot3>true</useSpringBoot3>
+                                <useTags>true</useTags>
+                                <openApiNullable>false</openApiNullable>
+                                <skipDefaultInterface>true</skipDefaultInterface>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 

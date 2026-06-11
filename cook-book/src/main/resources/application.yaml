@@ -19,3 +19,10 @@ spring:
   liquibase:
     drop-first: false
     change-log: classpath:liquibase/master.xml
+
+springdoc:
+  swagger-ui:
+    operations-sorter: method
+    urls:
+      - url: /swagger/cook_book_api.yaml
+        name: cook-book-api
