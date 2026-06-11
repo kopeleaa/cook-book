@@ -15,5 +15,6 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="liquibase/changelog/v0/2606012303_create_ingredient_table.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/v0/2606112228_create_recipe_table_and_add_recipe_id_to_ingredient_table.xml" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>

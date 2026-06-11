@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="2606112228_create_recipe_table_and_add_recipe_id_to_ingredient_table" author="ekopilovic">
+        <createTable tableName="RECIPE">
+            <column name="NAME" type="varchar(256)" >
+                <constraints nullable="false" />
+            </column>
+            <column name="DESCRIPTION" type="varchar(4000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="PREPARATION_TIME" type="int">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <addColumn tableName="INGREDIENT">
+            <column name="RECIPE_ID" type="int">
+                <constraints nullable="false" />
+            </column>
+        </addColumn>
+
+        <createIndex tableName="INGREDIENT" indexName="IX_INGREDIENT_RECIPE_ID" unique="true">
+            <column name="RECIPE_ID"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>
