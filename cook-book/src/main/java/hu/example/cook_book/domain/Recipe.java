@@ -22,7 +22,7 @@ public class Recipe extends AbstractEntity{
     @Column(name = "PREPARATION_TIME", nullable = false)
     private int preparationTime;
 
-    @OneToMany(mappedBy = "recipe")
+    @OneToMany
     private List<Ingredient> ingredients;
 
     public String getName() {

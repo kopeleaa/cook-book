@@ -4,8 +4,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
@@ -30,6 +28,9 @@ public class Ingredient extends AbstractEntity{
     @Column(name = "QUANTITY", nullable = false)
     private Double quantity;
 
+    /**
+     * The unit of the ingredient (e.g., grams, liters, pieces)
+     */
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "UNIT", length = 256, nullable = false)
@@ -46,10 +47,6 @@ public class Ingredient extends AbstractEntity{
 
     @Column(name = "IN_STOCK", nullable = false)
     private boolean inStock;
-
-    @ManyToOne
-    @JoinColumn(name = "RECIPE_ID")
-    private Recipe recipe;
 
     public String getName() {
         return name;
@@ -115,13 +112,6 @@ public class Ingredient extends AbstractEntity{
         this.inStock = inStock;
     }
 
-    public Recipe getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(final Recipe recipe) {
-        this.recipe = recipe;
-    }
 }
 
 

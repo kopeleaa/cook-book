@@ -29,7 +29,19 @@ components:
           format: int64
         name:
           type: string
-        unit:
+        description:
           type: string
         type:
           type: string
+        quantity:
+          type: number
+          format: float
+        unit:
+          type: string
+        expirationDate:
+          type: string
+          format: date
+        tasteProfile:
+          type: string
+        inStock:
+          type: boolean
