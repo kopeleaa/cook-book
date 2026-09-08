@@ -6,8 +6,11 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="2607202320_create_ingredient_table" author="ekopilovic">
+    <changeSet id="2609082314_create_ingredient_table" author="ekopilovic">
         <createTable tableName="INGREDIENT">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
             <column name="NAME" type="varchar(256)" >
                 <constraints nullable="false" />
             </column>

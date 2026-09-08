@@ -2,13 +2,15 @@ package hu.example.cook_book.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import java.util.List;
 
 @Entity
 @Table(name = "RECIPE")
-public class Recipe extends AbstractEntity{
+public class Recipe extends AbstractEntity {
 
     @Column(name = "NAME", nullable = false, length = 256)
     private String name;
@@ -22,7 +24,9 @@ public class Recipe extends AbstractEntity{
     @Column(name = "PREPARATION_TIME", nullable = false)
     private int preparationTime;
 
-    @OneToMany
+    @ManyToMany
+    @JoinTable(name = "RECIPE_INGREDIENT", joinColumns = @JoinColumn(name = "RECIPE_ID"),
+        inverseJoinColumns = @JoinColumn(name = "INGREDIENT_ID"))
     private List<Ingredient> ingredients;
 
     public String getName() {

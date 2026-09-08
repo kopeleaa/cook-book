@@ -4,10 +4,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "INGREDIENT")
@@ -47,6 +51,11 @@ public class Ingredient extends AbstractEntity{
 
     @Column(name = "IN_STOCK", nullable = false)
     private boolean inStock;
+
+    @ManyToMany
+    @JoinTable(name = "RECIPE_INGREDIENT", joinColumns = @JoinColumn(name = "INGREDIENT_ID"),
+        inverseJoinColumns = @JoinColumn(name = "RECIPE_ID"))
+    private List<Recipe> recipes;
 
     public String getName() {
         return name;
