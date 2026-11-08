@@ -1,6 +1,6 @@
 package hu.example.cook_book.web;
 
-import hu.example.cook_book.service.IngredientService;
+import hu.example.cook_book.service.ingredient.IngredientService;
 import hu.example.cook_book.web.api.IngredientApi;
 import hu.example.cook_book.web.model.IngredientDTO;
 import org.springframework.http.ResponseEntity;
